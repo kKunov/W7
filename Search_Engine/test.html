@@ -2,7 +2,23 @@
 
     <head>
         <title>Kokal's search engine!</title>
-        <link rel="stylesheet" href="/templates/mystyle.css">
+        <style>
+            body {
+                background-color: #000000;
+                color: #008F00;
+                padding-top: 200;
+                padding-left: 180;
+            }
+            .form {
+                background-color: #000000;
+                border-color: #008F00;
+                color: #008F00;
+            }
+            input{
+                padding-left: 400;
+            }
+
+        </style>
 
     </head>
 
@@ -11,8 +27,8 @@
         <h1>Te tava te e tarsa4kata na Kokala, Bace!!!</h1>
 
         <form method="get" action="search/">
-            <input type="text" name="search">
-            <button> Search!</button>
+            <input class = 'form' type="text" name="search">
+            <button class = 'form'> Search!</button>
         </form>
 
     </body>

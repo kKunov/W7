@@ -6,25 +6,59 @@
 
         <link rel="stylesheet" href="mystyle.css">
 
+        <style type="text/css">
+            body {
+                background-color: #000000;
+                color: #008F00;
+            }
+            h1 {
+                padding-bottom: 100;
+            }
+            h4 {
+                font-size: 16;
+                padding-left: 70;
+                padding-bottom: 40;
+            }
+            a:link {
+                color: #CC0052;
+            }
+            a:visited {
+                color: #CCCC00;
+            }
+            a:hover {
+                color: #800000;
+            }
+            a:active {
+                color: #00CC00;
+            }
+            .h1 {
+                padding-left: 450;
+            }
+        </style>
+
     </head>
 
     <body>
+        <h1 class = "h1">Results for
 
-        {% if searchword %}
+            {% for word in words_list %}
 
-            <h1>Results for '{{searchword}}':</h1>
+                '{{word}}'
 
-        {% else %}
+            {% else %}
 
-            <h1>Results: </h1>
+                Results
 
-        {% endif %}
+            {% endfor %}:
+
+        </h1>
 
         {% for page in pages: %}
 
             <h4>
 
                 <a href = {{page[0]}} > {{page[0]}} </a>
+                <p>{{page[1]}}</p>
 
             </h4>
 
