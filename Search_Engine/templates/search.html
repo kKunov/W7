@@ -1,0 +1,35 @@
+<html>
+
+    <head>
+
+        <title>Your Search!</title>
+
+        <link rel="stylesheet" href="mystyle.css">
+
+    </head>
+
+    <body>
+
+        {% if searchword %}
+
+            <h1>Results for '{{searchword}}':</h1>
+
+        {% else %}
+
+            <h1>Results: </h1>
+
+        {% endif %}
+
+        {% for page in pages: %}
+
+            <h4>
+
+                <a href = {{page[0]}} > {{page[0]}} </a>
+
+            </h4>
+
+        {% endfor %}
+
+    </body>
+
+</html>

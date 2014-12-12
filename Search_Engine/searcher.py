@@ -1,13 +1,11 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
-from datetime import datetime
-from searcher_db import Website, Page
-
-engine = create_engine("sqlite:///searcher.db")
-
-session = Session(bind=engine)
+from searcher_class import Spider
 
 
-def website_adder(sitelist):
-    for site in sitelist:
+def main():
+    website = input("Site:")
+    site = Spider(website)
+    site.scan_website()
 
+
+if __name__ == '__main__':
+    main()
