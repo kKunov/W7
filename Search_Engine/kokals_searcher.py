@@ -24,8 +24,10 @@ def main_page():
 @app.route('/search/<search>')
 def search(search=None):
     searchwords = request.args.get('search', '')
+    searchwords.encode('utf-8')
     words_list = []
     results = []
+
     for word in searchwords.split():
         words_list.append(word)
         results_for_one_word = session.query(Page.url, Page.title
@@ -33,11 +35,10 @@ def search(search=None):
                                                       like("%{}%".format(word))
                                                       ).all()
         for result in results_for_one_word:
-            results.append(result)
+            results.append(result.encode('utf-8'))
 
     return render_template('search.html', pages=results, words_list=words_list)
 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
-

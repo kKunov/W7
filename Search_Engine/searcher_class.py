@@ -86,7 +86,7 @@ class Spider():
                                                   ).one()
 
         try:
-            title = soup.title.string
+            title = soup.title.string.encode('utf-8')
 
         except Exception:
             title = "N/A"
