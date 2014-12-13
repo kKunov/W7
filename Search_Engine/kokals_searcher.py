@@ -35,7 +35,7 @@ def search(search=None):
                                                       like("%{}%".format(word))
                                                       ).all()
         for result in results_for_one_word:
-            results.append(result.encode('utf-8'))
+            results.append(result)
 
     return render_template('search.html', pages=results, words_list=words_list)
 
